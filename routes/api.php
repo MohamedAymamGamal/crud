@@ -4,6 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::apiResource('users', UserController::class)->names('api.users');
-});
+
+Route::apiResource('users', UserController::class);
+Route::get('/test-api', fn () => response()->json(['message' => 'API working']));
